@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mina Tillägg – Klövern</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .config-layout { display: grid; grid-template-columns: 1fr 340px; gap: 28px; align-items: start; }
+    @media (max-width: 1023px) { .config-layout { grid-template-columns: 1fr; } }
+
+    .room-nav { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+    .room-nav-btn {
+      padding: 10px 22px; border-radius: var(--radius-md); font-size: 0.85rem; font-weight: 600;
+      background: var(--color-card); border: 1px solid var(--color-border); color: var(--color-text-muted);
+      cursor: pointer; transition: all var(--transition); font-family: var(--font-body);
+    }
+    .room-nav-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .room-nav-btn.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+    .option-card {
+      background: var(--color-card); border: 2px solid var(--color-border); border-radius: var(--radius-lg);
+      overflow: hidden; cursor: pointer; transition: all var(--transition); position: relative;
+    }
+    .option-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-hover); }
+    .option-card.selected { border-color: var(--color-primary); }
+    .option-card.selected::after {
+      content: '✓'; position: absolute; top: 12px; right: 12px; width: 28px; height: 28px;
+      background: var(--color-primary); color: #fff; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700;
+    }
+    .option-card.included { border-style: dashed; opacity: 0.7; }
+    .option-card.included::after {
+      content: 'Standard'; position: absolute; top: 12px; right: 12px;
+      background: var(--color-border); color: var(--color-text-muted); padding: 2px 10px;
+      border-radius: 999px; font-size: 0.65rem; font-weight: 600;
+    }
+
+    .option-image {
+      height: 140px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: var(--color-text-muted);
+    }
+    .option-body { padding: 16px; }
+    .option-body h4 { font-size: 0.9rem; margin-bottom: 4px; }
+    .option-body p { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 10px; line-height: 1.4; }
+    .option-price { font-size: 1rem; font-weight: 700; font-family: var(--font-heading); color: var(--color-primary); }
+    .option-price.included-price { color: var(--color-text-muted); font-weight: 500; font-size: 0.85rem; }
+
+    .summary-card {
+      background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+      padding: 24px; position: sticky; top: 80px;
+    }
+    .summary-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid var(--color-border-light); font-size: 0.85rem;
+    }
+    .summary-item:last-child { border-bottom: none; }
+    .summary-item-name { flex: 1; }
+    .summary-item-price { font-weight: 600; white-space: nowrap; margin-left: 12px; }
+    .summary-item-remove {
+      margin-left: 8px; color: var(--color-text-light); cursor: pointer; padding: 2px;
+      transition: color var(--transition);
+    }
+    .summary-item-remove:hover { color: var(--color-error); }
+    .summary-total {
+      display: flex; justify-content: space-between; padding-top: 16px; margin-top: 8px;
+      border-top: 2px solid var(--color-primary); font-weight: 700; font-size: 1.1rem;
+      font-family: var(--font-heading);
+    }
+    .summary-empty { text-align: center; padding: 24px 0; color: var(--color-text-muted); font-size: 0.85rem; }
+
+    .deadline-banner {
+      background: var(--color-warning-bg); border: 1px solid #f0d9a8; border-radius: var(--radius-md);
+      padding: 12px 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+      font-size: 0.85rem; color: var(--color-warning);
+    }
+
+    .hubspot-note {
+      background: var(--color-accent-light); border-radius: var(--radius-md); padding: 12px 20px;
+      font-size: 0.8rem; color: var(--color-text-muted); display: flex; align-items: flex-start; gap: 8px;
+      margin-top: 20px; line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>KLÖVERN</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Översikt</a>
+        <a href="min-bostad.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Min Bostad</a>
+        <a href="mina-tillagg.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>Mina Tillägg</a>
+        <a href="min-kompis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Min Kompis</a>
+        <a href="min-flyttguide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Min Flyttguide</a>
+        <a href="mina-erbjudanden.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Mina Erbjudanden</a>
+        <a href="min-portvakt.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Min Portvakt</a>
+        <a href="mitt-kvarter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Mitt Kvarter</a>
+      </nav>
+      <div class="sidebar-footer">Klövern Mina Sidor Demo</div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" aria-label="Meny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <div class="topbar-breadcrumb">Mina Sidor / <span>Mina Tillägg</span></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-notification"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notification-badge">3</span></div>
+          <div class="topbar-user"><div class="user-info"><div class="user-name">Anna Lindström</div><div class="user-apartment">Lgh 1204</div></div><div class="user-avatar">AL</div></div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>Mina Tillägg</h1>
+          <p>Anpassa din bostad med tillval och uppgraderingar. Välj bland alternativ för varje rum.</p>
+        </div>
+
+        <!-- Deadline -->
+        <div class="deadline-banner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><strong>Sista dag för tillval: 30 april 2026.</strong> Du har 43 dagar kvar att göra dina val.</div>
+        </div>
+
+        <div class="config-layout">
+          <!-- Left: Configurator -->
+          <div>
+            <!-- Room Navigation -->
+            <div class="room-nav">
+              <button class="room-nav-btn active" onclick="showRoom('kok')">Kök</button>
+              <button class="room-nav-btn" onclick="showRoom('badrum')">Badrum</button>
+              <button class="room-nav-btn" onclick="showRoom('golv')">Golv</button>
+              <button class="room-nav-btn" onclick="showRoom('el')">El & Belysning</button>
+              <button class="room-nav-btn" onclick="showRoom('ovrigt')">Övrigt</button>
+            </div>
+
+            <!-- KÖK -->
+            <div class="room-panel active" id="room-kok">
+              <h2 style="margin-bottom:6px;">Kök</h2>
+              <p class="text-sm text-muted" style="margin-bottom:20px;">Standardkök ingår. Uppgraderingar nedan kostar extra.</p>
+              <div class="grid-2">
+                <div class="option-card included">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e8e0d8,#d4c8b8);">Standardkök – Vit laminat</div>
+                  <div class="option-body">
+                    <h4>Standardkök</h4>
+                    <p>Vit laminat med integrerade handtag, laminatbänkskiva, standard vitvaror från Bosch.</p>
+                    <div class="option-price included-price">Ingår i köpet</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="kok-1" data-price="18500" data-name="Kök: Ekfronter premium" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d4c0a0,#b8a080);">Ekfronter – Naturlig ek</div>
+                  <div class="option-body">
+                    <h4>Ekfronter premium</h4>
+                    <p>Massiva ekfronter med mjukstängande beslag. Naturlig yta med skyddslack.</p>
+                    <div class="option-price">+18 500 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="kok-2" data-price="12800" data-name="Kök: Stenbänkskiva komposit" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#c8c8c8,#a0a0a0);">Komposit – Grå nyans</div>
+                  <div class="option-body">
+                    <h4>Stenbänkskiva komposit</h4>
+                    <p>Slitstark kompositsten i valfri grå eller vit nyans. Integrerad diskho möjlig.</p>
+                    <div class="option-price">+12 800 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="kok-3" data-price="4200" data-name="Kök: Uppgraderad köksblandare" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d8dce0,#b8c0c8);">Mora Cera – Svart matt</div>
+                  <div class="option-body">
+                    <h4>Uppgraderad köksblandare</h4>
+                    <p>Mora Cera i svart matt utförande med utdragbar pip och disk-dusch.</p>
+                    <div class="option-price">+4 200 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="kok-4" data-price="8900" data-name="Kök: Induktionshäll med inbyggd fläkt" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#2a2a2a,#4a4a4a);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="12" r="2"/></svg>
+                  </div>
+                  <div class="option-body">
+                    <h4>Induktionshäll med fläkt</h4>
+                    <p>Integrerad dunstfläkt i hällen. Tyst drift, enklare installation, friare val av överskåp.</p>
+                    <div class="option-price">+8 900 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="kok-5" data-price="3500" data-name="Kök: Infälld LED-belysning bänk" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#f0e8d8,#e0d0b8);">LED-list under överskåp</div>
+                  <div class="option-body">
+                    <h4>Infälld LED bänkbelysning</h4>
+                    <p>Dimbar LED-list under alla överskåp. Varmvitt ljus med touch-dimmer.</p>
+                    <div class="option-price">+3 500 kr</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BADRUM -->
+            <div class="room-panel" id="room-badrum" style="display:none;">
+              <h2 style="margin-bottom:6px;">Badrum</h2>
+              <p class="text-sm text-muted" style="margin-bottom:20px;">Standardbadrum ingår. Välj uppgraderingar nedan.</p>
+              <div class="grid-2">
+                <div class="option-card included">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e0e0e0,#c8c8c8);">Standardkakel – Vitt 15x15</div>
+                  <div class="option-body">
+                    <h4>Standardkakel</h4>
+                    <p>Vitt kakel 15x15cm, standardfog. Klinker i matchande grå.</p>
+                    <div class="option-price included-price">Ingår i köpet</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="bad-1" data-price="14200" data-name="Bad: Kakel Carrara marmor" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e8e4e0,#d0ccc8);">Carrara-inspirerat storformat</div>
+                  <div class="option-body">
+                    <h4>Kakel Carrara marmor</h4>
+                    <p>Storformat marmorinspirerat kakel 60x120cm. Elegant grå-vit ådring.</p>
+                    <div class="option-price">+14 200 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="bad-2" data-price="7600" data-name="Bad: Takdusch regndusch" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d4dae8,#b0b8c8);">Regndusch 30cm – Svart matt</div>
+                  <div class="option-body">
+                    <h4>Takdusch regndusch</h4>
+                    <p>Infälld regndusch Ø30cm i svart matt. Inkl. handdusch och termostatblandare.</p>
+                    <div class="option-price">+7 600 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="bad-3" data-price="9800" data-name="Bad: Handdukstork elektrisk" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#ddd8d4,#c0b8b0);">Towel Rail – Krom</div>
+                  <div class="option-body">
+                    <h4>Elektrisk handdukstork</h4>
+                    <p>Tidsstyrd elektrisk handdukstork i krom. Timer och temperatursensor.</p>
+                    <div class="option-price">+9 800 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="bad-4" data-price="5400" data-name="Bad: Spegelskåp LED" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e0e4e8,#c8ccd0);">Spegelskåp med integrerad LED</div>
+                  <div class="option-body">
+                    <h4>Spegelskåp med LED</h4>
+                    <p>Inbyggd LED-belysning, avimningsfunktion, 2 eluttag, mjukstängning.</p>
+                    <div class="option-price">+5 400 kr</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GOLV -->
+            <div class="room-panel" id="room-golv" style="display:none;">
+              <h2 style="margin-bottom:6px;">Golv</h2>
+              <p class="text-sm text-muted" style="margin-bottom:20px;">Standardgolv (laminat) ingår i alla rum utom badrum.</p>
+              <div class="grid-2">
+                <div class="option-card included">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d8ccb8,#c0b098);">Laminat – Ljus ek</div>
+                  <div class="option-body">
+                    <h4>Standardlaminat</h4>
+                    <p>Laminatgolv i ljus ek, tålig yta med 20 års garanti.</p>
+                    <div class="option-price included-price">Ingår i köpet</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="golv-1" data-price="16500" data-name="Golv: Ekparkett 1-stav" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#c8b090,#a89070);">Ekparkett – Naturoljad</div>
+                  <div class="option-body">
+                    <h4>Ekparkett 1-stav</h4>
+                    <p>Kährs ekparkett 1-stav, naturoljad. Tidlös kvalitet med 30 års garanti.</p>
+                    <div class="option-price">+16 500 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="golv-2" data-price="22000" data-name="Golv: Fiskbensparkett ek" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#b8a888,#988868);">Fiskben – Klassiskt mönster</div>
+                  <div class="option-body">
+                    <h4>Fiskbensparkett ek</h4>
+                    <p>Klassiskt fiskbensmönster i massiv ek. Handslipat, lackat. Tidlös elegans.</p>
+                    <div class="option-price">+22 000 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="golv-3" data-price="4200" data-name="Golv: Golvvärme extra zon" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e8d8c8,#d0c0a8);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                  </div>
+                  <div class="option-body">
+                    <h4>Golvvärme extra zon</h4>
+                    <p>Utökad golvvärme till hall och/eller sovrum. Individuell styrning per zon.</p>
+                    <div class="option-price">+4 200 kr</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- EL -->
+            <div class="room-panel" id="room-el" style="display:none;">
+              <h2 style="margin-bottom:6px;">El & Belysning</h2>
+              <p class="text-sm text-muted" style="margin-bottom:20px;">Standardinstallation ingår. Lägg till fler uttag, dimrar och belysning.</p>
+              <div class="grid-2">
+                <div class="option-card" data-option="el-1" data-price="1800" data-name="El: Extra dubbeluttag kök (2st)" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e0e0e0,#c0c0c0);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </div>
+                  <div class="option-body">
+                    <h4>Extra dubbeluttag kök</h4>
+                    <p>2 st extra dubbeluttag ovanför bänkskiva. Placering efter önskemål.</p>
+                    <div class="option-price">+1 800 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="el-2" data-price="4800" data-name="El: Spotlights hall & kök" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#f0e8d0,#e0d0b0);">Infällda spotlights</div>
+                  <div class="option-body">
+                    <h4>Spotlights hall & kök</h4>
+                    <p>6 st infällda LED-spotlights i hall och kök. Dimbar med smart-kompatibilitet.</p>
+                    <div class="option-price">+4 800 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="el-3" data-price="2400" data-name="El: Dimmer alla rum" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d8d8d8,#b8b8b8);">Dimmer – Vridbar</div>
+                  <div class="option-body">
+                    <h4>Dimmer alla rum</h4>
+                    <p>Dimmers i samtliga rum (vardagsrum, sovrum, hall). Tryck/vrid-funktion.</p>
+                    <div class="option-price">+2 400 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="el-4" data-price="6500" data-name="El: Förberedelse laddbox garage" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#c8d8c8,#a8b8a8);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  </div>
+                  <div class="option-body">
+                    <h4>Förberedelse laddbox</h4>
+                    <p>Dragning av kabel och säkring till garageplats för framtida elbilsladdare.</p>
+                    <div class="option-price">+6 500 kr</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ÖVRIGT -->
+            <div class="room-panel" id="room-ovrigt" style="display:none;">
+              <h2 style="margin-bottom:6px;">Övrigt</h2>
+              <p class="text-sm text-muted" style="margin-bottom:20px;">Ytterligare anpassningar för hela bostaden.</p>
+              <div class="grid-2">
+                <div class="option-card" data-option="ovr-1" data-price="3200" data-name="Övrigt: Extra garderob sovrum" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#e0d8d0,#c8c0b8);">Skjutdörrsgarderob</div>
+                  <div class="option-body">
+                    <h4>Extra garderob sovrum</h4>
+                    <p>Inbyggd garderob med skjutdörrar i sovrummet. Spegeldörr tillval.</p>
+                    <div class="option-price">+3 200 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="ovr-2" data-price="8500" data-name="Övrigt: Smart hem-paket" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d4dae8,#b0b8c8);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </div>
+                  <div class="option-body">
+                    <h4>Smart hem-paket</h4>
+                    <p>Förberedelse för smarta lås, belysning och termostat. Hub + 4 enheter.</p>
+                    <div class="option-price">+8 500 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="ovr-3" data-price="15000" data-name="Övrigt: Balkonginglasning" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#c8d8e0,#a0b8c8);">Inglasning – Skjutbara glas</div>
+                  <div class="option-body">
+                    <h4>Balkongingleasning</h4>
+                    <p>Ramfri inglasning med skjutbara glaspartier. Förlänger säsongen markant.</p>
+                    <div class="option-price">+15 000 kr</div>
+                  </div>
+                </div>
+                <div class="option-card" data-option="ovr-4" data-price="2800" data-name="Övrigt: Ljuddämpande innerdörrar" onclick="toggleOption(this)">
+                  <div class="option-image" style="background:linear-gradient(135deg,#d8d0c8,#c0b8a8);">Massiva innerdörrar</div>
+                  <div class="option-body">
+                    <h4>Ljuddämpande innerdörrar</h4>
+                    <p>Uppgraderade innerdörrar med ljuddämpning 35dB. Massiv kärna, slät yta.</p>
+                    <div class="option-price">+2 800 kr</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hubspot-note">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span><strong>HubSpot-implementation:</strong> Tillvalskonfiguratorn kan byggas med HubDB som produktdatabas, custom HubL-moduler för UI, och HubSpot Forms + Workflows för bekräftelse och orderhantering. Prisberäkning sker i realtid via JavaScript i modulen. Betalning hanteras via HubSpot Commerce Hub (betalningslänkar) eller Stripe-integration.</span>
+            </div>
+          </div>
+
+          <!-- Right: Summary -->
+          <div>
+            <div class="summary-card">
+              <h3 style="margin-bottom:16px;">Sammanställning</h3>
+              <div id="summary-list">
+                <div class="summary-empty">Inga tillägg valda ännu. Klicka på ett alternativ för att lägga till det.</div>
+              </div>
+              <div class="summary-total" id="summary-total" style="display:none;">
+                <span>Totalt tillägg</span>
+                <span id="summary-total-value">0 kr</span>
+              </div>
+              <button class="btn btn-primary w-full" style="margin-top:16px;" id="confirm-btn" disabled onclick="confirmSelections()">Bekräfta val</button>
+              <p class="text-xs text-muted" style="margin-top:10px;text-align:center;">Valen är bindande efter bekräftelse. Faktureras separat vid tillträde.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div>Klövern AB &middot; Kungsgatan 5, Stockholm &middot; kontakt@klovern.se</div>
+        <div><a href="#">Integritetspolicy</a><a href="#">Villkor</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="demo-banner">Detta är en demo av Klöverns Mina Sidor-portal. All data är fiktiv.</div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let selectedOptions = {};
+
+    function showRoom(room) {
+      document.querySelectorAll('.room-panel').forEach(p => p.style.display = 'none');
+      document.getElementById('room-' + room).style.display = 'block';
+      document.querySelectorAll('.room-nav-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function toggleOption(card) {
+      if (card.classList.contains('included')) return;
+      const id = card.dataset.option;
+      const price = parseInt(card.dataset.price);
+      const name = card.dataset.name;
+
+      if (selectedOptions[id]) {
+        delete selectedOptions[id];
+        card.classList.remove('selected');
+      } else {
+        selectedOptions[id] = { name, price };
+        card.classList.add('selected');
+      }
+      updateSummary();
+    }
+
+    function removeOption(id) {
+      delete selectedOptions[id];
+      const card = document.querySelector(`[data-option="${id}"]`);
+      if (card) card.classList.remove('selected');
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const list = document.getElementById('summary-list');
+      const totalEl = document.getElementById('summary-total');
+      const totalValueEl = document.getElementById('summary-total-value');
+      const confirmBtn = document.getElementById('confirm-btn');
+      const keys = Object.keys(selectedOptions);
+
+      if (keys.length === 0) {
+        list.innerHTML = '<div class="summary-empty">Inga tillägg valda ännu. Klicka på ett alternativ för att lägga till det.</div>';
+        totalEl.style.display = 'none';
+        confirmBtn.disabled = true;
+        return;
+      }
+
+      let total = 0;
+      list.innerHTML = keys.map(id => {
+        const opt = selectedOptions[id];
+        total += opt.price;
+        return `<div class="summary-item">
+          <span class="summary-item-name">${opt.name}</span>
+          <span class="summary-item-price">+${opt.price.toLocaleString('sv-SE')} kr</span>
+          <span class="summary-item-remove" onclick="removeOption('${id}')" title="Ta bort">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+        </div>`;
+      }).join('');
+
+      totalEl.style.display = 'flex';
+      totalValueEl.textContent = '+' + total.toLocaleString('sv-SE') + ' kr';
+      confirmBtn.disabled = false;
+    }
+
+    function confirmSelections() {
+      const count = Object.keys(selectedOptions).length;
+      const total = Object.values(selectedOptions).reduce((s, o) => s + o.price, 0);
+      showToast(`${count} tillägg bekräftade (${total.toLocaleString('sv-SE')} kr). Orderbekräftelse skickas till din e-post.`);
+    }
+  </script>
+</body>
+</html>
