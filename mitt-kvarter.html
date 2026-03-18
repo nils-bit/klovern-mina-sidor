@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitt Kvarter – Klövern</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>KLÖVERN</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Översikt</a>
+        <a href="min-bostad.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Min Bostad</a>
+        <a href="min-kompis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Min Kompis</a>
+        <a href="min-flyttguide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Min Flyttguide</a>
+        <a href="mina-erbjudanden.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Mina Erbjudanden</a>
+        <a href="min-portvakt.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Min Portvakt</a>
+        <a href="mitt-kvarter.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Mitt Kvarter</a>
+      </nav>
+      <div class="sidebar-footer">Klövern Mina Sidor Demo</div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" aria-label="Meny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <div class="topbar-breadcrumb">Mina Sidor / <span>Mitt Kvarter</span></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-notification"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notification-badge">3</span></div>
+          <div class="topbar-user"><div class="user-info"><div class="user-name">Anna Lindström</div><div class="user-apartment">Lgh 1204</div></div><div class="user-avatar">AL</div></div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <!-- Area Header -->
+        <div style="background:linear-gradient(135deg,#c9d6e3 0%,#8a9fb8 100%);border-radius:var(--radius-lg);padding:48px 40px;margin-bottom:32px;color:#fff;">
+          <h1 style="color:#fff;font-size:2rem;margin-bottom:8px;">Kv. Solsidan, Nacka</h1>
+          <p style="color:rgba(255,255,255,0.85);max-width:500px;">Ett modernt kvarter med närhet till vatten, natur och stadsliv. Här bor du centralt i Nacka med allt du behöver runt hörnet.</p>
+        </div>
+
+        <!-- Bulletin Board -->
+        <div class="section">
+          <div class="section-header">
+            <h2>Anslagstavla</h2>
+            <button class="btn btn-primary btn-sm" data-modal="#post-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Skriv inlägg
+            </button>
+          </div>
+
+          <div class="filter-pills" data-target="#bulletin-list" style="margin-bottom:16px;">
+            <button class="filter-pill active" data-filter="all">Alla</button>
+            <button class="filter-pill" data-filter="Aktiviteter">Aktiviteter</button>
+            <button class="filter-pill" data-filter="Säljes/Skänkes">Säljes/Skänkes</button>
+            <button class="filter-pill" data-filter="Information">Information</button>
+            <button class="filter-pill" data-filter="Övrigt">Övrigt</button>
+          </div>
+
+          <div id="bulletin-list">
+            <div class="bulletin-card" data-category="Aktiviteter">
+              <div class="bulletin-header">
+                <h3>Gemensam grillkväll 20 juni</h3>
+                <span class="badge badge-info">Aktiviteter</span>
+              </div>
+              <div class="bulletin-meta">Styrelsen &middot; 2 dagar sedan</div>
+              <p>Välkomna till sommarens första grillkväll på innergården! Ta med något att grilla, dryck finns.</p>
+            </div>
+            <div class="bulletin-card" data-category="Övrigt">
+              <div class="bulletin-header">
+                <h3>Söker barnvakt fredagar</h3>
+                <span class="badge badge-info">Övrigt</span>
+              </div>
+              <div class="bulletin-meta">Familjen i Lgh 0803 &middot; 4 dagar sedan</div>
+              <p>Vi söker barnvakt till våra två barn (3 och 6 år) varannan fredag kväll.</p>
+            </div>
+            <div class="bulletin-card" data-category="Säljes/Skänkes">
+              <div class="bulletin-header">
+                <h3>Skänkes: Bokhylla IKEA Billy</h3>
+                <span class="badge badge-success">Säljes/Skänkes</span>
+              </div>
+              <div class="bulletin-meta">Lgh 1102 &middot; 1 vecka sedan</div>
+              <p>Vit Billy-bokhylla i gott skick. Hämtas i källaren. Kontakta mig via appen.</p>
+            </div>
+            <div class="bulletin-card" data-category="Aktiviteter">
+              <div class="bulletin-header">
+                <h3>Yoga på innergården – onsdagar kl 18</h3>
+                <span class="badge badge-info">Aktiviteter</span>
+              </div>
+              <div class="bulletin-meta">Anna K, Lgh 0501 &middot; 1 vecka sedan</div>
+              <p>Jag håller yogapass varje onsdag. Alla nivåer välkomna! Ta med egen matta.</p>
+            </div>
+            <div class="bulletin-card" data-category="Information">
+              <div class="bulletin-header">
+                <h3>OBS: Hissunderhåll 25 mars</h3>
+                <span class="badge badge-warning">Information</span>
+              </div>
+              <div class="bulletin-meta">Förvaltningen &middot; 2 veckor sedan</div>
+              <p>Hissen kommer vara ur drift mellan 08:00-12:00 den 25 mars pga planerat underhåll.</p>
+            </div>
+            <div class="bulletin-card" data-category="Aktiviteter">
+              <div class="bulletin-header">
+                <h3>Loppis i gården 5 april</h3>
+                <span class="badge badge-info">Aktiviteter</span>
+              </div>
+              <div class="bulletin-meta">Styrelsen &middot; 3 veckor sedan</div>
+              <p>Anmäl er till loppisen via anslagstavlan i entrén. Max ett bord per lägenhet.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Local Guide -->
+        <div class="section">
+          <h2 style="margin-bottom:16px;">I närheten</h2>
+          <div class="grid-2">
+            <div class="guide-card">
+              <div class="guide-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+              <div class="guide-info"><h4>ICA Kvantum Nacka</h4><p>Mataffär</p></div>
+              <span class="guide-distance">350m</span>
+            </div>
+            <div class="guide-card">
+              <div class="guide-icon" style="background:var(--color-warning-bg);color:var(--color-warning);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+              <div class="guide-info"><h4>Café Solsidan</h4><p>10% rabatt för Klövern-boende</p></div>
+              <span class="guide-distance">150m</span>
+            </div>
+            <div class="guide-card">
+              <div class="guide-icon" style="background:var(--color-success-bg);color:var(--color-success);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div class="guide-info"><h4>Vårdcentral Nacka</h4><p>Drop-in mån-fre 08-10</p></div>
+              <span class="guide-distance">800m</span>
+            </div>
+            <div class="guide-card">
+              <div class="guide-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <div class="guide-info"><h4>Buss 401 (hållplats)</h4><p>Till Slussen, var 10 min</p></div>
+              <span class="guide-distance">200m</span>
+            </div>
+            <div class="guide-card">
+              <div class="guide-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+              <div class="guide-info"><h4>Nacka Gymnasium</h4><p>Skola</p></div>
+              <span class="guide-distance">600m</span>
+            </div>
+            <div class="guide-card">
+              <div class="guide-icon" style="background:var(--color-warning-bg);color:var(--color-warning);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+              <div class="guide-info"><h4>Nacka Forum</h4><p>Butiker, restauranger, bio</p></div>
+              <span class="guide-distance">1,2 km</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="section">
+          <h2 style="margin-bottom:16px;">Kommande evenemang</h2>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+              <div>
+                <h3 style="font-size:0.95rem;margin-bottom:4px;">BRF Årsstämma</h3>
+                <p class="text-sm text-muted">Festlokalen, kl 18:30</p>
+              </div>
+              <div class="badge badge-info">15 apr 2026</div>
+            </div>
+            <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+              <div>
+                <h3 style="font-size:0.95rem;margin-bottom:4px;">Gemensam städdag</h3>
+                <p class="text-sm text-muted">Innergården, kl 10:00</p>
+              </div>
+              <div class="badge badge-info">3 maj 2026</div>
+            </div>
+            <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+              <div>
+                <h3 style="font-size:0.95rem;margin-bottom:4px;">Grillkväll</h3>
+                <p class="text-sm text-muted">Innergården, kl 17:00</p>
+              </div>
+              <div class="badge badge-info">20 jun 2026</div>
+            </div>
+            <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+              <div>
+                <h3 style="font-size:0.95rem;margin-bottom:4px;">Sommarfest</h3>
+                <p class="text-sm text-muted">Innergården, kl 15:00</p>
+              </div>
+              <div class="badge badge-info">21 jun 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div>Klövern AB &middot; Kungsgatan 5, Stockholm &middot; kontakt@klovern.se</div>
+        <div><a href="#">Integritetspolicy</a><a href="#">Villkor</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Post Modal -->
+  <div class="modal-overlay" id="post-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Nytt inlägg</h2>
+        <button class="modal-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <form data-success="Ditt inlägg har publicerats!">
+          <div class="form-group"><label>Rubrik</label><input type="text" class="form-input" placeholder="Skriv en rubrik..."></div>
+          <div class="form-group">
+            <label>Kategori</label>
+            <select class="form-select">
+              <option>Aktiviteter</option>
+              <option>Säljes/Skänkes</option>
+              <option>Information</option>
+              <option>Övrigt</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Meddelande</label><textarea class="form-textarea" placeholder="Skriv ditt meddelande..."></textarea></div>
+          <button type="submit" class="btn btn-primary w-full">Publicera</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-banner">Detta är en demo av Klöverns Mina Sidor-portal. All data är fiktiv.</div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

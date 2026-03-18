@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mina Erbjudanden – Klövern</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>KLÖVERN</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Översikt</a>
+        <a href="min-bostad.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Min Bostad</a>
+        <a href="min-kompis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Min Kompis</a>
+        <a href="min-flyttguide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Min Flyttguide</a>
+        <a href="mina-erbjudanden.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Mina Erbjudanden</a>
+        <a href="min-portvakt.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Min Portvakt</a>
+        <a href="mitt-kvarter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Mitt Kvarter</a>
+      </nav>
+      <div class="sidebar-footer">Klövern Mina Sidor Demo</div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" aria-label="Meny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <div class="topbar-breadcrumb">Mina Sidor / <span>Mina Erbjudanden</span></div>
+        </div>
+        <div class="topbar-right">
+          <!-- Cart button -->
+          <button class="topbar-notification" onclick="toggleCartDrawer()" style="position:relative;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            <span class="cart-count" style="display:none;">0</span>
+          </button>
+          <div class="topbar-notification"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notification-badge">3</span></div>
+          <div class="topbar-user"><div class="user-info"><div class="user-name">Anna Lindström</div><div class="user-apartment">Lgh 1204</div></div><div class="user-avatar">AL</div></div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>Mina Erbjudanden</h1>
+          <p>Exklusiva erbjudanden och förmåner för Klövern-boende.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+          <div class="tabs">
+            <button class="tab active" data-tab="alla">Alla erbjudanden</button>
+            <button class="tab" data-tab="inredning">Inredning</button>
+            <button class="tab" data-tab="hemtjanster">Hemtjänster</button>
+            <button class="tab" data-tab="lokalt">Lokalt</button>
+            <button class="tab" data-tab="butiken">Butiken</button>
+          </div>
+
+          <!-- Offers -->
+          <div class="tab-panel active" data-panel="alla">
+            <div class="grid-3">
+              <div class="offer-card">
+                <span class="offer-discount">15%</span>
+                <div class="offer-partner">IKEA</div>
+                <h3>15% rabatt hos IKEA</h3>
+                <p>Gäller hela sortimentet i butik och online.</p>
+                <div class="offer-expiry">Gäller t.o.m. 2026-08-31</div>
+                <button class="btn btn-primary btn-sm offer-reveal-btn">Visa kod</button>
+                <div class="offer-code" style="margin-top:12px;">KLOVERN15</div>
+              </div>
+              <div class="offer-card">
+                <span class="offer-discount">10%</span>
+                <div class="offer-partner">Ellos Home</div>
+                <h3>10% på inredning</h3>
+                <p>Gäller möbler, textilier och belysning.</p>
+                <div class="offer-expiry">Gäller t.o.m. 2026-07-31</div>
+                <button class="btn btn-primary btn-sm offer-reveal-btn">Visa kod</button>
+                <div class="offer-code" style="margin-top:12px;">SOLSIDAN10</div>
+              </div>
+              <div class="offer-card">
+                <span class="offer-discount">Gratis</span>
+                <div class="offer-partner">Hemfrid</div>
+                <h3>Gratis hemstädning vid inflyttning</h3>
+                <p>En kostnadsfri hemstädning i din nya bostad.</p>
+                <div class="offer-expiry">Gäller t.o.m. 2026-06-30</div>
+                <button class="btn btn-outline btn-sm">Boka</button>
+              </div>
+              <div class="offer-card">
+                <span class="offer-discount">20%</span>
+                <div class="offer-partner">MatHem</div>
+                <h3>20% på första leveransen</h3>
+                <p>Beställ matkasse med hemleverans till rabattpris.</p>
+                <div class="offer-expiry">Gäller t.o.m. 2026-09-30</div>
+                <button class="btn btn-primary btn-sm offer-reveal-btn">Visa kod</button>
+                <div class="offer-code" style="margin-top:12px;">KLOVERN20</div>
+              </div>
+              <div class="offer-card">
+                <span class="offer-discount">2 för 1</span>
+                <div class="offer-partner">Café Solsidan</div>
+                <h3>2-för-1 på fika</h3>
+                <p>Visa upp din Klövern-boende QR-kod vid kassan.</p>
+                <div class="offer-expiry">Gäller t.o.m. 2026-12-31</div>
+                <button class="btn btn-outline btn-sm">Visa erbjudande</button>
+              </div>
+              <div class="offer-card">
+                <span class="offer-discount">Från 1 990 kr</span>
+                <div class="offer-partner">Städarna</div>
+                <h3>Flyttstädning</h3>
+                <p>Professionell flyttstädning med nöjd-kund-garanti.</p>
+                <div class="offer-expiry">Gäller t.o.m. 2026-06-30</div>
+                <button class="btn btn-outline btn-sm">Boka</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="inredning">
+            <div class="grid-3">
+              <div class="offer-card"><span class="offer-discount">15%</span><div class="offer-partner">IKEA</div><h3>15% rabatt hos IKEA</h3><p>Gäller hela sortimentet.</p><button class="btn btn-primary btn-sm offer-reveal-btn">Visa kod</button><div class="offer-code" style="margin-top:12px;">KLOVERN15</div></div>
+              <div class="offer-card"><span class="offer-discount">10%</span><div class="offer-partner">Ellos Home</div><h3>10% på inredning</h3><p>Möbler, textilier och belysning.</p><button class="btn btn-primary btn-sm offer-reveal-btn">Visa kod</button><div class="offer-code" style="margin-top:12px;">SOLSIDAN10</div></div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="hemtjanster">
+            <div class="grid-3">
+              <div class="offer-card"><span class="offer-discount">Gratis</span><div class="offer-partner">Hemfrid</div><h3>Gratis hemstädning</h3><p>En kostnadsfri hemstädning vid inflyttning.</p><button class="btn btn-outline btn-sm">Boka</button></div>
+              <div class="offer-card"><span class="offer-discount">Från 1 990 kr</span><div class="offer-partner">Städarna</div><h3>Flyttstädning</h3><p>Professionell med nöjd-kund-garanti.</p><button class="btn btn-outline btn-sm">Boka</button></div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="lokalt">
+            <div class="grid-3">
+              <div class="offer-card"><span class="offer-discount">20%</span><div class="offer-partner">MatHem</div><h3>20% på första leveransen</h3><p>Matkasse med hemleverans.</p><button class="btn btn-primary btn-sm offer-reveal-btn">Visa kod</button><div class="offer-code" style="margin-top:12px;">KLOVERN20</div></div>
+              <div class="offer-card"><span class="offer-discount">2 för 1</span><div class="offer-partner">Café Solsidan</div><h3>2-för-1 på fika</h3><p>Visa QR-kod vid kassan.</p><button class="btn btn-outline btn-sm">Visa erbjudande</button></div>
+            </div>
+          </div>
+
+          <!-- SHOP -->
+          <div class="tab-panel" data-panel="butiken">
+            <div style="background:var(--color-accent-light);border-radius:var(--radius-md);padding:12px 20px;margin-bottom:24px;font-size:0.85rem;color:var(--color-accent);display:flex;align-items:center;gap:8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              I HubSpot kan butikssektionen byggas med anpassade moduler och integrationer med betalningslösningar som Stripe.
+            </div>
+            <div class="grid-3">
+              <div class="product-card">
+                <div class="product-card-image"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+                <div class="product-card-body">
+                  <h3>Klövern Presentkort</h3>
+                  <p>Digitalt presentkort att ge bort till en granne.</p>
+                  <div class="product-price">500 kr</div>
+                  <button class="btn btn-primary btn-sm w-full" onclick="addToCart(1)">Lägg i varukorg</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-card-image" style="background:linear-gradient(135deg,#f0e6d3 0%,#d4c0a0 100%);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+                <div class="product-card-body">
+                  <h3>Välkomstpaket Hemmakväll</h3>
+                  <p>Ljus, snacks och en filt – perfekt första kvällen.</p>
+                  <div class="product-price">349 kr</div>
+                  <button class="btn btn-primary btn-sm w-full" onclick="addToCart(2)">Lägg i varukorg</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-card-image" style="background:linear-gradient(135deg,#d8e8d0 0%,#a8c89c 100%);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><circle cx="12" cy="12" r="10"/></svg></div>
+                <div class="product-card-body">
+                  <h3>Balkongmöbelset</h3>
+                  <p>Bord och två stolar i akacia, perfekt för balkongen.</p>
+                  <div class="product-price">2 495 kr</div>
+                  <button class="btn btn-primary btn-sm w-full" onclick="addToCart(3)">Lägg i varukorg</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-card-image" style="background:linear-gradient(135deg,#d4dae8 0%,#a0b0c8 100%);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+                <div class="product-card-body">
+                  <h3>Smarthempaket Basic</h3>
+                  <p>Smarta lampor, kontakter och hub för ditt nya hem.</p>
+                  <div class="product-price">1 295 kr</div>
+                  <button class="btn btn-primary btn-sm w-full" onclick="addToCart(4)">Lägg i varukorg</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-card-image" style="background:linear-gradient(135deg,#e8e0d8 0%,#c8b8a8 100%);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+                <div class="product-card-body">
+                  <h3>Dörrskylt Personlig</h3>
+                  <p>Graverad dörrskylt i borstad aluminium.</p>
+                  <div class="product-price">249 kr</div>
+                  <button class="btn btn-primary btn-sm w-full" onclick="addToCart(5)">Lägg i varukorg</button>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-card-image" style="background:linear-gradient(135deg,#c4dcc4 0%,#8ab88a 100%);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M12 22c-4.97 0-9-2.686-9-6v-2c0-3.314 4.03-6 9-6s9 2.686 9 6v2c0 3.314-4.03 6-9 6z"/></svg></div>
+                <div class="product-card-body">
+                  <h3>Blomsterlåda Balkong</h3>
+                  <p>Självbevattande blomsterlåda i antracitgrå.</p>
+                  <div class="product-price">179 kr</div>
+                  <button class="btn btn-primary btn-sm w-full" onclick="addToCart(6)">Lägg i varukorg</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div>Klövern AB &middot; Kungsgatan 5, Stockholm &middot; kontakt@klovern.se</div>
+        <div><a href="#">Integritetspolicy</a><a href="#">Villkor</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Varukorg</h3>
+      <button onclick="closeCartDrawer()" style="cursor:pointer;color:var(--color-text-muted);padding:4px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body">
+      <p class="text-muted text-sm" style="text-align:center;padding:40px 0;">Varukorgen är tom</p>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-total">
+        <span>Totalt</span>
+        <span class="cart-total-value">0 kr</span>
+      </div>
+      <button class="btn btn-primary w-full" onclick="mockCheckout()">Gå till kassan</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Kassa</h2>
+        <button class="modal-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Namn</label>
+          <input type="text" class="form-input" value="Anna Lindström" readonly>
+        </div>
+        <div class="form-group">
+          <label>Leveransadress</label>
+          <input type="text" class="form-input" value="Solsidansvägen 12, Lgh 1204, 131 52 Nacka" readonly>
+        </div>
+        <div class="form-group">
+          <label>Betalningsmetod</label>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <label style="display:flex;align-items:center;gap:8px;padding:12px;border:1px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;font-size:0.85rem;">
+              <input type="radio" name="payment" checked> Swish
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;padding:12px;border:1px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;font-size:0.85rem;">
+              <input type="radio" name="payment"> Kortbetalning
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;padding:12px;border:1px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;font-size:0.85rem;">
+              <input type="radio" name="payment"> Faktura
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-primary w-full btn-lg" onclick="completeOrder()">Slutför köp</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-banner">Detta är en demo av Klöverns Mina Sidor-portal. All data är fiktiv.</div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

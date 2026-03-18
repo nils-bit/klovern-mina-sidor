@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mina Sidor – Klövern</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span>KLÖVERN</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Översikt
+        </a>
+        <a href="min-bostad.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Min Bostad
+        </a>
+        <a href="min-kompis.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          Min Kompis
+        </a>
+        <a href="min-flyttguide.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Min Flyttguide
+        </a>
+        <a href="mina-erbjudanden.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Mina Erbjudanden
+        </a>
+        <a href="min-portvakt.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          Min Portvakt
+        </a>
+        <a href="mitt-kvarter.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Mitt Kvarter
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        Klövern Mina Sidor Demo
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" aria-label="Meny">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="topbar-breadcrumb">
+            Mina Sidor / <span>Översikt</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-notification" role="button" aria-label="Notifikationer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            <span class="notification-badge">3</span>
+            <!-- Notification dropdown -->
+            <div class="notification-dropdown" style="position:absolute;top:100%;right:0;margin-top:8px;width:320px;background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-modal);display:none;z-index:60;">
+              <div style="padding:16px 20px;border-bottom:1px solid var(--color-border);font-weight:600;font-size:0.9rem;">Notifikationer</div>
+              <div style="padding:8px;">
+                <div style="padding:12px;border-radius:var(--radius-md);font-size:0.85rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='var(--color-bg)'" onmouseout="this.style.background='transparent'">
+                  <div style="font-weight:500;">Nytt dokument tillgängligt</div>
+                  <div style="color:var(--color-text-muted);font-size:0.75rem;margin-top:4px;">Slutbesiktningsprotokoll har laddats upp</div>
+                </div>
+                <div style="padding:12px;border-radius:var(--radius-md);font-size:0.85rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='var(--color-bg)'" onmouseout="this.style.background='transparent'">
+                  <div style="font-weight:500;">Ärende uppdaterat</div>
+                  <div style="color:var(--color-text-muted);font-size:0.75rem;margin-top:4px;">Tekniker bokad för fläkt i badrum</div>
+                </div>
+                <div style="padding:12px;border-radius:var(--radius-md);font-size:0.85rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='var(--color-bg)'" onmouseout="this.style.background='transparent'">
+                  <div style="font-weight:500;">Nytt erbjudande</div>
+                  <div style="color:var(--color-text-muted);font-size:0.75rem;margin-top:4px;">15% rabatt hos IKEA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="topbar-user">
+            <div class="user-info">
+              <div class="user-name">Anna Lindström</div>
+              <div class="user-apartment">Lgh 1204</div>
+            </div>
+            <div class="user-avatar">AL</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="page-content">
+        <!-- Welcome Hero -->
+        <div class="welcome-hero">
+          <h1>Välkommen, Anna!</h1>
+          <p>Här är en översikt av din bostad och dina tjänster i Kv. Solsidan, Nacka.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid-4 section">
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">75</div>
+              <div class="stat-label">dagar till inflyttning</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">1</div>
+              <div class="stat-label">öppet ärende</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">12</div>
+              <div class="stat-label">dokument</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <div>
+              <div class="stat-value">3</div>
+              <div class="stat-label">nya erbjudanden</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card-flat section">
+          <h2 style="margin-bottom: 20px;">Inflyttningsprocess</h2>
+          <div class="timeline">
+            <div class="timeline-step done">
+              <div class="timeline-dot done">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <div class="timeline-label">Kontrakt</div>
+                <div class="timeline-date">Sep 2025</div>
+              </div>
+            </div>
+            <div class="timeline-step done">
+              <div class="timeline-dot done">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <div class="timeline-label">Tillval</div>
+                <div class="timeline-date">Nov 2025</div>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot active">68%</div>
+              <div>
+                <div class="timeline-label">Byggnation</div>
+                <div class="timeline-progress">68% klart</div>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot upcoming">4</div>
+              <div>
+                <div class="timeline-label">Besiktning</div>
+                <div class="timeline-date">Maj 2026</div>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot upcoming">5</div>
+              <div>
+                <div class="timeline-label">Inflyttning</div>
+                <div class="timeline-date">Jun 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two-column section -->
+        <div class="grid-2 section">
+          <!-- Recent Activity -->
+          <div class="card-flat">
+            <h2 style="margin-bottom: 16px;">Senaste aktivitet</h2>
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <div class="activity-text">Nytt dokument: Slutbesiktningsprotokoll</div>
+                  <div class="activity-time">2 dagar sedan</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon" style="background: var(--color-warning-bg); color: var(--color-warning);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div>
+                  <div class="activity-text">Ärende uppdaterat: Fläkt i badrum</div>
+                  <div class="activity-time">3 dagar sedan</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon" style="background: var(--color-success-bg); color: var(--color-success);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </div>
+                <div>
+                  <div class="activity-text">Ny artikel: 5 tips för din nya balkong</div>
+                  <div class="activity-time">5 dagar sedan</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                </div>
+                <div>
+                  <div class="activity-text">Erbjudande: 15% rabatt hos IKEA</div>
+                  <div class="activity-time">1 vecka sedan</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Upcoming Events -->
+          <div class="card-flat">
+            <h2 style="margin-bottom: 16px;">Kommande händelser</h2>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="info-card" style="border:none;padding:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <h4 style="margin-bottom:4px;">Nyckelutlämning</h4>
+                    <p class="text-sm text-muted">Klövern Nacka kontor, Stationsvägen 5</p>
+                  </div>
+                  <div class="badge badge-info">1 jun</div>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--color-border-light);"></div>
+              <div class="info-card" style="border:none;padding:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <h4 style="margin-bottom:4px;">BRF Årsstämma</h4>
+                    <p class="text-sm text-muted">Festlokalen, kl 18:30</p>
+                  </div>
+                  <div class="badge badge-info">15 apr</div>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--color-border-light);"></div>
+              <div class="info-card" style="border:none;padding:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div>
+                    <h4 style="margin-bottom:4px;">Gemensam städdag</h4>
+                    <p class="text-sm text-muted">Innergården, kl 10:00</p>
+                  </div>
+                  <div class="badge badge-info">3 maj</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Area info -->
+        <div class="card-flat section">
+          <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+            <div style="flex:1;min-width:200px;">
+              <h2 style="margin-bottom:8px;">Ditt kvarter</h2>
+              <p class="text-muted text-sm" style="margin-bottom:16px;">Kv. Solsidan ligger i Nacka med närhet till natur, service och kommunikationer.</p>
+              <a href="mitt-kvarter.html" class="btn btn-outline btn-sm">Utforska kvarteret</a>
+            </div>
+            <div style="flex:1;min-width:280px;height:180px;background:linear-gradient(135deg, #c9d6e3 0%, #a8b8c8 100%);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);font-size:0.9rem;">
+              Kv. Solsidan, Nacka – Kartvy
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div>Klövern AB &middot; Kungsgatan 5, Stockholm &middot; kontakt@klovern.se</div>
+        <div>
+          <a href="#">Integritetspolicy</a>
+          <a href="#">Villkor</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Demo Banner -->
+  <div class="demo-banner">
+    Detta är en demo av Klöverns Mina Sidor-portal. All data är fiktiv. Byggt för att visa möjligheter med HubSpot CMS.
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

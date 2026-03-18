@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min Bostad – Klövern</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>KLÖVERN</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Översikt</a>
+        <a href="min-bostad.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Min Bostad</a>
+        <a href="min-kompis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Min Kompis</a>
+        <a href="min-flyttguide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Min Flyttguide</a>
+        <a href="mina-erbjudanden.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Mina Erbjudanden</a>
+        <a href="min-portvakt.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Min Portvakt</a>
+        <a href="mitt-kvarter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Mitt Kvarter</a>
+      </nav>
+      <div class="sidebar-footer">Klövern Mina Sidor Demo</div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" aria-label="Meny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <div class="topbar-breadcrumb">Mina Sidor / <span>Min Bostad</span></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-notification"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notification-badge">3</span></div>
+          <div class="topbar-user"><div class="user-info"><div class="user-name">Anna Lindström</div><div class="user-apartment">Lgh 1204</div></div><div class="user-avatar">AL</div></div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <!-- Apartment Header -->
+        <div class="apartment-header">
+          <div class="apartment-image" style="display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);font-size:1.1rem;background:linear-gradient(135deg,#c9d6e3 0%,#a8b8c8 100%);">
+            Kv. Solsidan – Lgh 1204
+          </div>
+          <div class="apartment-info">
+            <h1>Lgh 1204, Kv. Solsidan</h1>
+            <p class="apartment-address">Solsidansvägen 12, 131 52 Nacka</p>
+            <div class="apartment-facts">
+              <div class="apartment-fact"><span class="apartment-fact-label">Storlek</span><span class="apartment-fact-value">3 rum och kök</span></div>
+              <div class="apartment-fact"><span class="apartment-fact-label">Yta</span><span class="apartment-fact-value">78 m²</span></div>
+              <div class="apartment-fact"><span class="apartment-fact-label">Våning</span><span class="apartment-fact-value">4</span></div>
+              <div class="apartment-fact"><span class="apartment-fact-label">Förening</span><span class="apartment-fact-value">BRF Solsidan</span></div>
+              <div class="apartment-fact"><span class="apartment-fact-label">Avgift</span><span class="apartment-fact-value">3 850 kr/mån</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+          <div class="tabs">
+            <button class="tab active" data-tab="dokument">Dokument</button>
+            <button class="tab" data-tab="avtal">Avtal</button>
+            <button class="tab" data-tab="tillval">Tillval</button>
+            <button class="tab" data-tab="brf">BRF-info</button>
+            <button class="tab" data-tab="bokningar">Bokningar</button>
+          </div>
+
+          <!-- Dokument -->
+          <div class="tab-panel active" data-panel="dokument">
+            <div style="margin-bottom:16px;">
+              <select class="form-select" style="width:auto;min-width:200px;" onchange="filterDocs(this.value)">
+                <option value="all">Alla typer</option>
+                <option value="Avtal">Avtal</option>
+                <option value="Ritning">Ritning</option>
+                <option value="Protokoll">Protokoll</option>
+                <option value="Garanti">Garanti</option>
+                <option value="BRF">BRF</option>
+                <option value="Information">Information</option>
+              </select>
+            </div>
+            <div class="table-wrapper">
+              <table id="doc-table">
+                <thead><tr><th>Namn</th><th>Typ</th><th>Datum</th><th>Ladda ner</th></tr></thead>
+                <tbody>
+                  <tr data-type="Avtal"><td>Köpeavtal</td><td><span class="badge badge-info">Avtal</span></td><td>2025-09-15</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Ritning"><td>Planritning Lgh 1204</td><td><span class="badge badge-info">Ritning</span></td><td>2025-09-15</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Protokoll"><td>Slutbesiktningsprotokoll</td><td><span class="badge badge-info">Protokoll</span></td><td>2026-03-10</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Deklaration"><td>Energideklaration</td><td><span class="badge badge-info">Deklaration</span></td><td>2026-02-28</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Garanti"><td>Garantibevis vitvaror</td><td><span class="badge badge-info">Garanti</span></td><td>2026-03-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="BRF"><td>Stadgar BRF Solsidan</td><td><span class="badge badge-info">BRF</span></td><td>2025-06-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="BRF"><td>Årsredovisning 2025</td><td><span class="badge badge-info">BRF</span></td><td>2026-02-15</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="BRF"><td>Underhållsplan</td><td><span class="badge badge-info">BRF</span></td><td>2025-12-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Information"><td>Brandskyddsinformation</td><td><span class="badge badge-info">Information</span></td><td>2025-10-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Information"><td>Ordningsregler</td><td><span class="badge badge-info">Information</span></td><td>2025-06-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Information"><td>Tvättstugeregler</td><td><span class="badge badge-info">Information</span></td><td>2025-06-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                  <tr data-type="Information"><td>Sopsorteringsguide</td><td><span class="badge badge-info">Information</span></td><td>2025-06-01</td><td><button class="btn-icon" title="Ladda ner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Avtal -->
+          <div class="tab-panel" data-panel="avtal">
+            <div class="info-card">
+              <h4>Köpeavtal</h4>
+              <div class="info-card-row"><span class="info-card-label">Köpeskilling</span><span class="info-card-value">4 250 000 kr</span></div>
+              <div class="info-card-row"><span class="info-card-label">Tillträdesdag</span><span class="info-card-value">2026-06-01</span></div>
+              <div class="info-card-row"><span class="info-card-label">Säljare</span><span class="info-card-value">Klövern Bostad AB</span></div>
+              <div class="info-card-row"><span class="info-card-label">Köpare</span><span class="info-card-value">Anna Lindström</span></div>
+              <div class="info-card-row"><span class="info-card-label">Objekt</span><span class="info-card-value">Lgh 1204, Kv. Solsidan</span></div>
+              <div class="info-card-row"><span class="info-card-label">Mäklare</span><span class="info-card-value">Klövern Försäljning</span></div>
+            </div>
+          </div>
+
+          <!-- Tillval -->
+          <div class="tab-panel" data-panel="tillval">
+            <div class="grid-3" style="margin-bottom:24px;">
+              <div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;"><span class="text-xs text-muted" style="text-transform:uppercase;letter-spacing:0.05em;">Golv</span><span class="badge badge-success">Bekräftad</span></div><h3 style="margin-bottom:4px;">Ekparkett premium</h3><div class="stat-value" style="font-size:1.1rem;">12 500 kr</div></div>
+              <div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;"><span class="text-xs text-muted" style="text-transform:uppercase;letter-spacing:0.05em;">Badrum</span><span class="badge badge-success">Bekräftad</span></div><h3 style="margin-bottom:4px;">Kakel Carrara marmor</h3><div class="stat-value" style="font-size:1.1rem;">8 200 kr</div></div>
+              <div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;"><span class="text-xs text-muted" style="text-transform:uppercase;letter-spacing:0.05em;">El</span><span class="badge badge-success">Bekräftad</span></div><h3 style="margin-bottom:4px;">Extra eluttag kök</h3><div class="stat-value" style="font-size:1.1rem;">2 400 kr</div></div>
+              <div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;"><span class="text-xs text-muted" style="text-transform:uppercase;letter-spacing:0.05em;">El</span><span class="badge badge-success">Bekräftad</span></div><h3 style="margin-bottom:4px;">Spotlights hall</h3><div class="stat-value" style="font-size:1.1rem;">3 800 kr</div></div>
+              <div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;"><span class="text-xs text-muted" style="text-transform:uppercase;letter-spacing:0.05em;">Kök</span><span class="badge badge-success">Bekräftad</span></div><h3 style="margin-bottom:4px;">Uppgraderad köksblandare</h3><div class="stat-value" style="font-size:1.1rem;">1 950 kr</div></div>
+            </div>
+            <div class="card-flat" style="text-align:right;">
+              <span class="text-muted">Totalt tillval: </span>
+              <strong style="font-size:1.2rem;color:var(--color-primary);">28 850 kr</strong>
+            </div>
+          </div>
+
+          <!-- BRF-info -->
+          <div class="tab-panel" data-panel="brf">
+            <div class="grid-2">
+              <div class="info-card">
+                <h4>BRF Solsidan</h4>
+                <div class="info-card-row"><span class="info-card-label">Org.nr</span><span class="info-card-value">769600-1234</span></div>
+                <div class="info-card-row"><span class="info-card-label">Månadsavgift</span><span class="info-card-value">3 850 kr</span></div>
+                <div class="info-card-row"><span class="info-card-label">Antal lägenheter</span><span class="info-card-value">48</span></div>
+                <div class="info-card-row"><span class="info-card-label">Byggår</span><span class="info-card-value">2026</span></div>
+              </div>
+              <div class="card-flat">
+                <h3 style="margin-bottom:16px;">Styrelse</h3>
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                  <div style="display:flex;justify-content:space-between;"><span>Maria Eriksson</span><span class="text-muted text-sm">Ordförande</span></div>
+                  <div style="display:flex;justify-content:space-between;"><span>Johan Andersson</span><span class="text-muted text-sm">Kassör</span></div>
+                  <div style="display:flex;justify-content:space-between;"><span>Sofia Bergström</span><span class="text-muted text-sm">Sekreterare</span></div>
+                  <div style="display:flex;justify-content:space-between;"><span>Peter Nilsson</span><span class="text-muted text-sm">Ledamot</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bokningar -->
+          <div class="tab-panel" data-panel="bokningar">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <div><h3 style="margin-bottom:4px;">Festlokal</h3><p class="text-sm text-muted">Max 30 personer, kök ingår</p></div>
+                <div style="display:flex;align-items:center;gap:12px;"><span class="badge badge-success">Ledig</span><button class="btn btn-primary btn-sm" data-modal="#booking-modal">Boka</button></div>
+              </div>
+              <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <div><h3 style="margin-bottom:4px;">Gästlägenhet</h3><p class="text-sm text-muted">Bokad 15-17 maj</p></div>
+                <div style="display:flex;align-items:center;gap:12px;"><span class="badge badge-warning">Bokad</span><button class="btn btn-secondary btn-sm" disabled>Boka</button></div>
+              </div>
+              <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <div><h3 style="margin-bottom:4px;">Bastu</h3><p class="text-sm text-muted">Max 6 personer, boka 2h-pass</p></div>
+                <div style="display:flex;align-items:center;gap:12px;"><span class="badge badge-success">Ledig</span><button class="btn btn-primary btn-sm" data-modal="#booking-modal">Boka</button></div>
+              </div>
+              <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <div><h3 style="margin-bottom:4px;">Tvättstuga 1</h3><p class="text-sm text-muted">Maskin 1-3, torktumlare</p></div>
+                <div style="display:flex;align-items:center;gap:12px;"><span class="badge badge-success">Ledig</span><button class="btn btn-primary btn-sm" data-modal="#booking-modal">Boka</button></div>
+              </div>
+              <div class="card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <div><h3 style="margin-bottom:4px;">Cykelverkstad</h3><p class="text-sm text-muted">Verktyg och pump finns</p></div>
+                <div style="display:flex;align-items:center;gap:12px;"><span class="badge badge-success">Ledig</span><button class="btn btn-primary btn-sm" data-modal="#booking-modal">Boka</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div>Klövern AB &middot; Kungsgatan 5, Stockholm &middot; kontakt@klovern.se</div>
+        <div><a href="#">Integritetspolicy</a><a href="#">Villkor</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Boka utrymme</h2>
+        <button class="modal-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <form data-success="Bokning bekräftad!">
+          <div class="form-group"><label>Datum</label><input type="date" class="form-input" value="2026-06-15"></div>
+          <div class="form-group"><label>Tid</label><select class="form-select"><option>09:00 – 12:00</option><option>12:00 – 15:00</option><option>15:00 – 18:00</option><option>18:00 – 21:00</option></select></div>
+          <button type="submit" class="btn btn-primary w-full">Bekräfta bokning</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-banner">Detta är en demo av Klöverns Mina Sidor-portal. All data är fiktiv.</div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function filterDocs(type) {
+      document.querySelectorAll('#doc-table tbody tr').forEach(row => {
+        row.style.display = (type === 'all' || row.dataset.type === type) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

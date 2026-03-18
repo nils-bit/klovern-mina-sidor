@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min Flyttguide – Klövern</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>KLÖVERN</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Översikt</a>
+        <a href="min-bostad.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Min Bostad</a>
+        <a href="min-kompis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Min Kompis</a>
+        <a href="min-flyttguide.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Min Flyttguide</a>
+        <a href="mina-erbjudanden.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Mina Erbjudanden</a>
+        <a href="min-portvakt.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Min Portvakt</a>
+        <a href="mitt-kvarter.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Mitt Kvarter</a>
+      </nav>
+      <div class="sidebar-footer">Klövern Mina Sidor Demo</div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" aria-label="Meny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <div class="topbar-breadcrumb">Mina Sidor / <span>Min Flyttguide</span></div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-notification"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notification-badge">3</span></div>
+          <div class="topbar-user"><div class="user-info"><div class="user-name">Anna Lindström</div><div class="user-apartment">Lgh 1204</div></div><div class="user-avatar">AL</div></div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <!-- Header with progress -->
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:32px;">
+          <div>
+            <h1>Min Flyttguide</h1>
+            <p class="text-muted" style="margin-top:4px;">Planering utan stress – håll koll på allt inför flytten.</p>
+          </div>
+          <div class="progress-circle">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" cx="60" cy="60" r="50"/>
+              <circle class="progress" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="103.67"/>
+            </svg>
+            <div class="progress-value">
+              <span class="number">67%</span>
+              <span class="label">12 av 18</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="card-flat section">
+          <div class="checklist-group">
+            <h3>Före flytten</h3>
+            <div class="checklist-item done"><div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="checklist-text">Säg upp nuvarande bostad</span></div>
+            <div class="checklist-item done"><div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="checklist-text">Teckna hemförsäkring</span></div>
+            <div class="checklist-item done"><div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="checklist-text">Anmäl adressändring</span></div>
+            <div class="checklist-item done"><div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="checklist-text">Beställ flyttkartonger</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Boka flyttfirma</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Packa rum för rum</span></div>
+            <div class="checklist-item done"><div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="checklist-text">Anmäl el och bredband</span></div>
+            <div class="checklist-item done"><div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="checklist-text">Ordna parkering för flyttbil</span></div>
+          </div>
+
+          <div class="checklist-group">
+            <h3>Flyttdagen</h3>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Hämta nycklar (kl 10:00, Klövern kontor)</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Dokumentera lägenheten vid inflyttning</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Kontrollera vitvaror</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Testa vatten och el</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Fotografera mätarställningar</span></div>
+          </div>
+
+          <div class="checklist-group">
+            <h3>Efter flytten</h3>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Uppackning av nödlåda</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Grannhälsning</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Registrera dig i BRF-portalen</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Boka tid för garagepass</span></div>
+            <div class="checklist-item"><div class="checklist-checkbox"></div><span class="checklist-text">Slutbesiktning uppföljning</span></div>
+          </div>
+        </div>
+
+        <!-- Key Info -->
+        <h2 style="margin-bottom:16px;">Praktisk information</h2>
+        <div class="grid-2 section">
+          <div class="info-card">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+              Nyckelutlämning
+            </h4>
+            <div class="info-card-row"><span class="info-card-label">Datum</span><span class="info-card-value">1 juni 2026</span></div>
+            <div class="info-card-row"><span class="info-card-label">Tid</span><span class="info-card-value">10:00</span></div>
+            <div class="info-card-row"><span class="info-card-label">Plats</span><span class="info-card-value">Klövern Nacka kontor</span></div>
+            <div class="info-card-row"><span class="info-card-label">Adress</span><span class="info-card-value">Stationsvägen 5, Nacka</span></div>
+          </div>
+
+          <div class="info-card">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Flyttdag & Tider
+            </h4>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border:1px solid var(--color-border);border-radius:var(--radius-md);">
+                <span class="text-sm">09:00 – 12:00</span><span class="badge badge-info">Ledig</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border:2px solid var(--color-accent);border-radius:var(--radius-md);background:var(--color-accent-light);">
+                <span class="text-sm" style="font-weight:600;">12:00 – 15:00</span><span class="badge badge-success">Vald tid</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border:1px solid var(--color-border);border-radius:var(--radius-md);opacity:0.5;">
+                <span class="text-sm">15:00 – 18:00</span><span class="badge badge-warning">Fullbokad</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+              Hiss & Parkering
+            </h4>
+            <div class="info-card-row"><span class="info-card-label">Hissbokning</span><span class="info-card-value">1 juni, 08:00–18:00 <span class="badge badge-success" style="margin-left:6px;">Bekräftad</span></span></div>
+            <div class="info-card-row"><span class="info-card-label">Flyttbilsparkering</span><span class="info-card-value">Plats P4 <span class="badge badge-success" style="margin-left:6px;">Bekräftad</span></span></div>
+          </div>
+
+          <div style="background:linear-gradient(135deg,#c9d6e3 0%,#a8b8c8 100%);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);font-size:0.9rem;min-height:200px;border:1px solid var(--color-border);">
+            Kv. Solsidan – Områdeskarta
+          </div>
+        </div>
+
+        <!-- Moving Help -->
+        <div class="section">
+          <h2 style="margin-bottom:16px;">Behöver du hjälp med flytten?</h2>
+          <div class="grid-2">
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+                <div style="width:48px;height:48px;background:var(--color-accent-light);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--color-accent);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div>
+                  <h3>Flyttfirma Nord</h3>
+                  <p class="text-sm text-muted">Professionell flytt med försäkring</p>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-sm">Kontakta</button>
+            </div>
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+                <div style="width:48px;height:48px;background:var(--color-success-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--color-success);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div>
+                  <h3>Städtjänst Syd</h3>
+                  <p class="text-sm text-muted">Flyttstädning med nöjd-kund-garanti</p>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-sm">Kontakta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div>Klövern AB &middot; Kungsgatan 5, Stockholm &middot; kontakt@klovern.se</div>
+        <div><a href="#">Integritetspolicy</a><a href="#">Villkor</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="demo-banner">Detta är en demo av Klöverns Mina Sidor-portal. All data är fiktiv.</div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
